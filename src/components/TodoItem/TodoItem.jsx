@@ -1,6 +1,10 @@
 import styles from "./todoItem.module.css"
+import classNames from "classnames"
+import { useTodoListMethodsContext } from "../../contexts/TodoListContextProvider"
 
-export const TodoItem = ({ title, id, index, completed, changeStatusTodo, deleteTodo }) => {
+export const TodoItem = ({ title, id, index, completed }) => {
+  const { changeStatusTodo, deleteTodo } = useTodoListMethodsContext()
+
   const completedHandler = () => {
     changeStatusTodo(id)
   }
@@ -15,7 +19,11 @@ export const TodoItem = ({ title, id, index, completed, changeStatusTodo, delete
         {index + 1}. {title}
       </span>
       <div>
-        <button onClick={completedHandler} type="button" className={completed ? "btn btn-primary mx-2" : "btn btn-success mx-2"}>
+        <button
+          onClick={completedHandler}
+          type="button"
+          className={classNames("btn", "mx-2", { "btn-primary": completed }, { "btn-success": !completed })}
+        >
           {completed ? "Undone" : "Done"}
         </button>
         <button onClick={deleteHandler} type="button" className="btn btn-danger">

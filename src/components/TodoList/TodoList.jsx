@@ -1,6 +1,11 @@
-import { TodoItem } from '../TodoItem/TodoItem'
+import { useTodoListContext } from "../../contexts/TodoListContextProvider"
+import { TodoItem } from "../TodoItem/TodoItem"
 
-export const TodoList = ({ todos, changeStatusTodo, deleteTodo }) => {
+export const TodoList = () => {
+  console.log("Render TodoList")
+
+  const todos = useTodoListContext()
+
   if (!todos.length) return <p>List is empty...</p>
 
   return (
@@ -12,8 +17,6 @@ export const TodoList = ({ todos, changeStatusTodo, deleteTodo }) => {
           title={todo.title}
           index={index}
           completed={todo.completed}
-          changeStatusTodo={changeStatusTodo}
-          deleteTodo={deleteTodo}
         />
       ))}
     </ul>

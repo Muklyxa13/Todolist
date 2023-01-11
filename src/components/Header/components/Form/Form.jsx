@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState } from "react"
+import { useTodoListMethodsContext } from "../../../../contexts/TodoListContextProvider"
 
-export const Form = ({ addNewTodo }) => {
-  const [title, setInput] = useState('')
+export const Form = () => {
+  console.log("Render Form")
+  const [title, setInput] = useState("")
+
+  const { addNewTodo } = useTodoListMethodsContext()
 
   const changeHandler = (e) => {
     // e - синтетическое событие
@@ -13,7 +17,7 @@ export const Form = ({ addNewTodo }) => {
 
     if (title.length) {
       addNewTodo(title)
-      setInput('')
+      setInput("")
     }
   }
 
@@ -21,13 +25,7 @@ export const Form = ({ addNewTodo }) => {
     <div className="d-flex justify-content-center">
       <form onSubmit={submitHandler} className="d-flex flex-column align-items-center">
         <div className="mb-2">
-          <input
-            value={title}
-            onChange={changeHandler}
-            placeholder="Title..."
-            type="text"
-            className="form-control"
-          />
+          <input value={title} onChange={changeHandler} placeholder="Title..." type="text" className="form-control" />
         </div>
         <button type="submit" className="btn btn-primary">
           Add

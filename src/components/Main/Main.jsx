@@ -1,9 +1,10 @@
 import { TodoList } from "../TodoList/TodoList"
 
-export const Main = ({ todos, changeStatusTodo, deleteTodo }) => {
+export const Main = () => {
+  console.log("Render Main")
   return (
     <main>
-      <TodoList changeStatusTodo={changeStatusTodo} deleteTodo={deleteTodo} todos={todos} />
+      <TodoList />
     </main>
   )
 }

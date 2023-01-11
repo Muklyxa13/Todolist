@@ -1,5 +1,14 @@
-import footerStyles from './footer.module.css'
+import { memo } from "react"
+import { useTodoListMethodsContext } from "../../contexts/TodoListContextProvider"
 
-export const Footer = () => {
-  return <footer className={footerStyles.wr}>Footer</footer>
-}
+export const Footer = memo(() => {
+  console.log("Render Footer")
+  const { clearAllTodos } = useTodoListMethodsContext()
+  return (
+    <footer className="d-flex justify-content-center">
+      <button onClick={clearAllTodos} type="button" className="btn btn-dark">
+        Clear All
+      </button>
+    </footer>
+  )
+})
