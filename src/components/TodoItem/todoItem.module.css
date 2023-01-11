@@ -1,3 +1,33 @@
 .done {
     text-decoration:line-through;
 }
+
+.yesDelete {
+    color: white;
+    background-color: rgba(0, 0, 0, .6);
+    margin-right: 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid;
+    height: 35px;
+    width: 50px;
+    box-shadow: 5px 5px 5px crimson;
+    font-size: 18px;
+}
+
+.noDelete {
+    color: black;
+    background-color: rgba(255, 255, 255, .7);
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid;
+    height: 35px;
+    width: 50px;
+    box-shadow: 5px 5px 5px crimson;
+    font-size: 18px;
+}
+
+.textModal {
+    color: white;
+    font-size: 18px;
+}
