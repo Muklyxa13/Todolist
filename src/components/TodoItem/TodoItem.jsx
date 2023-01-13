@@ -28,7 +28,6 @@ export const TodoItem = ({ title, id, index, completed }) => {
       <span className={completed ? styles.done : styles.undone}>
         {index + 1}. {title}
       </span>
-
       <div>
         <button
           onClick={openEditModalHandler}

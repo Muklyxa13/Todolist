@@ -30,7 +30,12 @@ function ModalInner({ closeHandler, children }) {
       <FontAwesomeIcon
         icon={faCircleXmark}
         onClick={closeModalByClickIcon}
-        className={styles.closeIcon}
+        className={classNames(
+          'animate__animated',
+          'animate__zoomIn',
+          'animate__delay-2s',
+          styles.closeIcon
+        )}
       />
       {children}
     </div>
