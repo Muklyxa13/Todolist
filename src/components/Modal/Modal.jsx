@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import styles from './Modal.module.css'
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
+import 'animate.css'
+import classNames from 'classnames'
 
 function ModalInner({ closeHandler, children }) {
   useEffect(() => {
@@ -24,7 +26,7 @@ function ModalInner({ closeHandler, children }) {
   }
 
   return (
-    <div className={styles.modalInner}>
+    <div className={classNames('animate__animated', 'animate__backInDown', styles.modalInner)}>
       <FontAwesomeIcon
         icon={faCircleXmark}
         onClick={closeModalByClickIcon}
@@ -47,7 +49,7 @@ export const Modal = ({ isOpen, closeHandler, children }) => {
   }
 
   return createPortal(
-    <div onClick={closeModalByClickWrapper} className={styles.modalWr}>
+    <div onMouseDown={closeModalByClickWrapper} className={styles.modalWr}>
       <ModalInner closeHandler={closeHandler}>{children}</ModalInner>
     </div>,
     document.getElementById('modal-root')

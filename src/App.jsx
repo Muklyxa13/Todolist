@@ -1,12 +1,10 @@
-import { useCallback } from "react"
-import { useState } from "react"
-import "./App.css"
-import { Footer } from "./components/Footer/Footer"
-import { HeaderMemo as Header } from "./components/Header/Header"
-import { Main } from "./components/Main/Main"
+import './App.css'
+import { Footer } from './components/Footer/Footer'
+import { HeaderMemo as Header } from './components/Header/Header'
+import { Main } from './components/Main/Main'
 
 function App() {
-  console.log("Render App")
+  console.log('Render App')
 
   return (
     <div className="container py-5">

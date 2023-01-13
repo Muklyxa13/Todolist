@@ -5,7 +5,7 @@ const TODO_LIST_LS_KEY = "TODO_LIST_LS_KEY"
 export const useTodos = () => {
     const [todos, setTodos] = useState(() => {
         const dataFromLS = localStorage.getItem(TODO_LIST_LS_KEY)
-    
+
         const preparedData = dataFromLS ? JSON.parse(dataFromLS) : []
     
         return preparedData
@@ -43,6 +43,19 @@ export const useTodos = () => {
           })
         )
       }, [setTodos])
+
+      const editTodo = useCallback((id, editedTodo) => {
+        setTodos((prev) => prev.map((todo) => {
+          if (todo.id === id) {
+            return {
+              ...todo,
+              ...editedTodo
+            }
+          }
+
+          return todo
+        }))
+      }, [setTodos])
     
       // eslint-disable-next-line no-unused-vars
       const clearAllTodos = useCallback(() => {
@@ -54,6 +67,7 @@ export const useTodos = () => {
         clearAllTodos,
         changeStatusTodo,
         deleteTodo,
-        addNewTodo
+        addNewTodo,
+        editTodo,
     }
 }

@@ -1,21 +1,21 @@
-import { useContext } from "react"
-import { useMemo } from "react"
-import { createContext } from "react"
-import { useTodos } from "./useTodos"
+import { useContext } from 'react'
+import { useMemo } from 'react'
+import { createContext } from 'react'
+import { useTodos } from './useTodos'
 
 export const TodoListContext = createContext()
 export const TodoListMethodsContext = createContext()
 
 export const TodoListContextProvider = ({ children }) => {
-  const { todos, addNewTodo, deleteTodo, changeStatusTodo, clearAllTodos } = useTodos()
+  const { todos, ...methods } = useTodos()
 
-  const todoListMethods = useMemo(() => {
-    return { addNewTodo, deleteTodo, changeStatusTodo, clearAllTodos }
-  }, [])
+  const todoListMethods = useMemo(() => methods, [])
 
   return (
     <TodoListContext.Provider value={todos}>
-      <TodoListMethodsContext.Provider value={todoListMethods}>{children}</TodoListMethodsContext.Provider>
+      <TodoListMethodsContext.Provider value={todoListMethods}>
+        {children}
+      </TodoListMethodsContext.Provider>
     </TodoListContext.Provider>
   )
 }

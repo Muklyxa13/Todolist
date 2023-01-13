@@ -1,7 +1,7 @@
-import { TodoList } from "../TodoList/TodoList"
+import { TodoList } from '../TodoList/TodoList'
 
 export const Main = () => {
-  console.log("Render Main")
+  console.log('Render Main')
   return (
     <main>
       <TodoList />

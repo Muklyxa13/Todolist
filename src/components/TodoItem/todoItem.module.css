@@ -1,5 +1,11 @@
 .done {
-    text-decoration:line-through;
+    color: rgba(128, 128, 128, .7);
+    font-size: 20px;
+}
+
+.undone {
+    font-size: 20px;
+    color: white;
 }
 
 .yesDelete {
@@ -9,10 +15,15 @@
     margin-top: 20px;
     border-radius: 8px;
     border: 1px solid;
-    height: 35px;
-    width: 50px;
+    height: 40px;
+    width: 60px;
     box-shadow: 5px 5px 5px crimson;
     font-size: 18px;
+}
+
+.yesDelete:hover {
+    background-color: grey;
+    color: white;
 }
 
 .noDelete {
@@ -21,13 +32,66 @@
     margin-top: 20px;
     border-radius: 8px;
     border: 1px solid;
-    height: 35px;
-    width: 50px;
+    height: 40px;
+    width: 60px;
     box-shadow: 5px 5px 5px crimson;
     font-size: 18px;
 }
 
-.textModal {
+.noDelete:hover {
+    background-color: grey;
+    color: white;
+}
+
+.textDeleteModal {
     color: white;
     font-size: 18px;
+}
+
+.textEditModal {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.save {
+    color: black;
+    margin-right: 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid;
+    height: 40px;
+    width: 70px;
+    box-shadow: 5px 5px 5px black;
+    font-size: 18px;
+}
+
+.save:hover {
+    background-color: grey;
+    color: white;
+}
+
+.cancel {
+    color: black;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid;
+    height: 40px;
+    width: 70px;
+    box-shadow: 5px 5px 5px black;
+    font-size: 18px;
+}
+
+.cancel:hover {
+    background-color: grey;
+    color: white;
+}
+
+.inputEditModal {
+    border-radius: 8px;
+    border: 1px solid black;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-bottom: 2px;
 }

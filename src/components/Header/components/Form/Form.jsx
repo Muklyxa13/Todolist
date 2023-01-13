@@ -1,9 +1,11 @@
-import { useState } from "react"
-import { useTodoListMethodsContext } from "../../../../contexts/TodoListContextProvider"
+import { useState } from 'react'
+import { useTodoListMethodsContext } from '../../../../contexts/TodoListContextProvider'
+import styles from './form.module.css'
+import classNames from 'classnames'
 
 export const Form = () => {
-  console.log("Render Form")
-  const [title, setInput] = useState("")
+  console.log('Render Form')
+  const [title, setInput] = useState('')
 
   const { addNewTodo } = useTodoListMethodsContext()
 
@@ -17,7 +19,7 @@ export const Form = () => {
 
     if (title.length) {
       addNewTodo(title)
-      setInput("")
+      setInput('')
     }
   }
 
@@ -25,9 +27,15 @@ export const Form = () => {
     <div className="d-flex justify-content-center">
       <form onSubmit={submitHandler} className="d-flex flex-column align-items-center">
         <div className="mb-2">
-          <input value={title} onChange={changeHandler} placeholder="Title..." type="text" className="form-control" />
+          <input
+            value={title}
+            onChange={changeHandler}
+            placeholder="Title..."
+            type="text"
+            className={classNames('form-control', styles.input)}
+          />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-outline-secondary border border-white text-white">
           Add
         </button>
       </form>
